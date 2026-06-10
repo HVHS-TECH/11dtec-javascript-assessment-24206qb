@@ -1,0 +1,79 @@
+body {
+  background-color: #fdfffd;
+  margin: 0px;
+}
+
+.logo {
+  display: block;
+  margin-right: 0px;
+  margin-left: 43.15vw;
+  padding-top: 30px;
+}
+
+
+.container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 300px 60px 45vh 45vh 45vh;
+  grid-template-columns: 16.54vw 16.54vw 16.54vw 16.54vw 16.54vw 16.54vw;
+}
+
+.container div {
+  font-size: 30px;
+  text-align: center;
+}
+
+.Wishlish {
+    margin-left: 83.15vw;
+  padding-top: 30px;
+}
+.nav {
+  grid-column: 1 / -1;
+  background-color: #fffdfd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  
+}
+
+.nav ul {
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 20px;
+}
+
+.nav li a {
+  display: block;
+  color: #fa9f37;
+  text-align: center;
+  font-size: 0.95em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.nav li a:hover {
+  color: #050403;
+  border-bottom: 3px solid rgb(38, 97, 24);
+  background-color: transparent;
+}
+
+.Item {
+  background-color: rgb(196, 158, 158);
+  border: 2px solid black;
+  margin: 15px;
+}
+
+.Item :hover {
+  border: 2px solid black;
+}
+
