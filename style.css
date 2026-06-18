@@ -1,13 +1,11 @@
 body {
-  background-color: #fdfffd;
+  background-color: #fdfffd; 
   margin: 0px;
 }
 
 .logo {
   display: block;
-  margin-right: 0px;
-  margin-left: 43.15vw;
-  padding-top: 30px;
+  grid-column: span 2;
 }
 
 
@@ -23,10 +21,6 @@ body {
   text-align: center;
 }
 
-.Wishlish {
-    margin-left: 83.15vw;
-  padding-top: 30px;
-}
 .nav {
   grid-column: 1 / -1;
   background-color: #fffdfd;
@@ -73,7 +67,14 @@ body {
   margin: 15px;
 }
 
-.Item :hover {
-  border: 2px solid black;
+
+.cartTab {
+  width: 400px;
+  background-color: rgb(88, 25, 25);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  grid-template-columns: 70px 1fr 70px;
 }
 
