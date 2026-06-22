@@ -1,13 +1,19 @@
-console.log("Hello world!")
+const cartItems = [];
+const cartListElement = document.querySelector(".Listcart");
+const addButtons = document.querySelectorAll(".add-to-cart");
 
-const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
-
-function addShoppingItem() {
-  const shoppingInput = document.getElementById("shoppingItemField");
-  const item = shoppingInput.value.trim();
-  SHOPPING_LIST.forEach((item) => {
-    message += `<p>${item}</p>`;
-  });
-
-  SHOPPING_OUTPUT.innerHTML = message;
+function formatPrice(value) {
+  return Number(value).toFixed(2);
 }
+
+function renderCart() {
+  if (!cartListElement) return;
+
+  if (cartItems.length === 0) {
+    cartListElement.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
+    return;
+  }
+
+
+}
+renderCart();

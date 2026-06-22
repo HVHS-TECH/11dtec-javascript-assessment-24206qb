@@ -48,8 +48,7 @@
    <img src="Img/Rhitta.webp" alt="Blade&Beyond" class="center" width="284" height="284">
    <div class="name">Rhitta</div>
    <div class="price">$19.99</div>
-   <button class="add-to-cart" onclick="addShoppingItem('Rhitta', '19.99')">Add to Cart
-   </button>
+   <button type="button" class="add-to-cart" data-name="Rhitta" data-price="19.99">Add to Cart</button>
   </div>
 </div>
 
@@ -129,7 +128,7 @@
 
 </div>
 
-<div class="Name/Money">
+<div class="name-money">
   <form onsubmit="return false;">
 
     <label for="nameField">Your Name:</label>
@@ -137,11 +136,12 @@
     
     <label for="moneyField">Pocket money:</label>
     <input type="text" id="moneyField" placeholder="Enter money"><br>
+  </form>
 </div>
 
  <div class="button">
-  <button class="close">Close</button>
-  <button class="checkout">Checkout</button>
+  <button class="close" type="button">Close</button>
+  <button class="checkout" type="button">Checkout</button>
  </div>
 
 </div>
