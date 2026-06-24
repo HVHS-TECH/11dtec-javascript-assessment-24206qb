@@ -14,11 +14,16 @@ body {
   min-height: 100vh;
   grid-template-rows: 300px 60px 45vh 45vh 45vh;
   grid-template-columns: 16.54vw 16.54vw 16.54vw 16.54vw 16.54vw 16.54vw;
+  transition: transform .5s;
 }
 
 .container div {
   font-size: 30px;
   text-align: center;
+}
+
+svg {
+  width: 30px;
 }
 
 .nav {
@@ -67,14 +72,23 @@ body {
   margin: 15px;
 }
 
+.Wishlish {
+
+}
+.blank {
+  background-color: rgb(255, 255, 255);
+  margin: 15px;
+}
+
+body.showcart .cartTab{
+   inset: 0 -400px 0 auto;
+}
 
 .cartTab {
   width: 400px;
   background-color: rgb(88, 25, 25);
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0 0 0 auto;
   display: grid;
   grid-template-rows: 70px 1fr 80px 70px;
   transition: .5s;
@@ -93,5 +107,10 @@ body {
 
 .cartTab .button .close { 
   background-color: rgb(53, 36, 36);
+}
+
+.emptycart {
+  color: white;
+  
 }
 

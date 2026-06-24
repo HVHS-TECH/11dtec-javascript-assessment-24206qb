@@ -1,3 +1,15 @@
+let Wishlish = document.querySelector('.Wishlish')
+let closecart = document.querySelector('.close')
+let body = document.querySelector('body')
+
+Wishlish.addEventListener('click', () => {
+  body.classList.toggle('showcart')
+})
+
+closecart.addEventListener('click', () => {
+  body.classList.toggle('showcart')
+})
+
 const cartItems = [];
 const cartListElement = document.querySelector(".Listcart");
 const addButtons = document.querySelectorAll(".add-to-cart");
@@ -10,9 +22,11 @@ function renderCart() {
   if (!cartListElement) return;
 
   if (cartItems.length === 0) {
-    cartListElement.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
+    cartListElement.innerHTML = '<p class="emptycart">Your cart is empty.</p>';
     return;
   }
+
+
 
 
 }
