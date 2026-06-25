@@ -66,14 +66,21 @@ svg {
   background-color: transparent;
 }
 
-.Item {
+.listproduct {
   background-color: rgb(196, 158, 158);
   border: 2px solid black;
   margin: 15px;
 }
 
-.Wishlish {
+.product-image {
+  width: 14.75vw;
+  height: 29vh;
+  object-fit: cover; 
+  object-position: center;
+}
 
+.Wishlish {
+   inset: 0 -4400px 0 auto;
 }
 .blank {
   background-color: rgb(255, 255, 255);
@@ -86,7 +93,7 @@ body.showcart .cartTab{
 
 .cartTab {
   width: 400px;
-  background-color: rgb(88, 25, 25);
+  background-color: rgba(233, 165, 165, 0.911);
   position: fixed;
   inset: 0 0 0 auto;
   display: grid;
@@ -100,13 +107,15 @@ body.showcart .cartTab{
 }
 
 .cartTab .button button {
-  background-color: rgb(12, 65, 12);
-  color: white;
+  background-color: rgba(217, 255, 0, 0.493);
+  color: black;
   cursor: pointer;
+    border-color: rgba(217, 255, 0, 0.61);
 }
 
 .cartTab .button .close { 
-  background-color: rgb(53, 36, 36);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-color: #fdfffd;
 }
 
 .emptycart {
