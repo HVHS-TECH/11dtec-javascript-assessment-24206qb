@@ -1,33 +1,19 @@
-let Wishlish = document.querySelector('.Wishlish')
-let closecart = document.querySelector('.close')
-let body = document.querySelector('body')
+console.log('hello world');
 
-Wishlish.addEventListener('click', () => {
-  body.classList.toggle('showcart')
-})
+function openCart() {
+const cartTab = document.querySelector(".showcart .cartTab")
 
-closecart.addEventListener('click', () => {
-  body.classList.toggle('showcart')
-})
-
-const cartItems = [];
-const cartListElement = document.querySelector(".Listcart");
-const addButtons = document.querySelectorAll(".add-to-cart");
-
-function formatPrice(value) {
-  return Number(value).toFixed(2);
+ if (cartTab) {
+   cartTab.style.inset =" 0 0px 0 auto ";
+ } 
 }
 
-function renderCart() {
-  if (!cartListElement) return;
+function closeCart() {
+const cartTab = document.querySelector(".showcart .cartTab")
 
-  if (cartItems.length === 0) {
-    cartListElement.innerHTML = '<p class="emptycart">Your cart is empty.</p>';
-    return;
-  }
-
-
-
-
+ if (cartTab) {
+   cartTab.style.inset =" 0 -400px 0 auto ";
+ }
+  
 }
-renderCart();
+
