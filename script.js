@@ -17,3 +17,5 @@ const cartTab = document.querySelector(".showcart .cartTab")
   
 }
 
+
+
