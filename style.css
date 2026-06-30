@@ -72,7 +72,7 @@ svg {
   margin: 15px;
 }
 
-.product-image {
+.productimage {
   width: 14.75vw;
   height: 29vh;
   object-fit: cover; 
@@ -88,10 +88,11 @@ svg {
 }
 
 body.showcart .cartTab{
-   inset: 0 -400px 0 auto;
+   inset: 0 -800px 0 auto;
 }
 
 .cartTab {
+  width: 800px;
   background-color: rgba(233, 165, 165, 0.911);
   position: fixed;
   inset: 0 0 0 auto;

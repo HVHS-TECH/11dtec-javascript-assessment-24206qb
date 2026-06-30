@@ -48,24 +48,30 @@
 
 
 <div class="listproduct">
-   <img class= "product-image" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center">
+   <img class= "productimage" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center">
    <div class="name">Rhitta</div>
    <div class="price">$19.99</div>
-   <button type="button" class="add-to-cart" data-name="Rhitta" data-price="19.99">Add to Cart</button>
+   <button type="button" onclick="addToCart('Rhitta', '$19.99')">
+    Add to Cart
+   </button>
 </div>
 
 <div class="listproduct">
-   <img class= "product-image" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center" width="284" height="284">
+   <img class= "productimage" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center" width="284" height="284">
       <div class="name">Rhitta</div>
    <div class="price">$19.99</div>
-    <button type="button" class="add-to-cart" data-name="Rhitta" data-price="19.99">Add to Cart</button>
+  <button type="button" onclick="addToCart()">
+    Add to Cart
+   </button>
 </div>
 
 <div class="listproduct">
-   <img class= "product-image" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center" width="284" height="284">
+   <img class= "productimage"  src="Img/Rhitta.webp" alt="Blade&Beyond" class="center" width="284" height="284">
    <div class="name">Rhitta</div>
    <div class="price">$19.99</div>
-   <button type="button" class="add-to-cart" data-name="Rhitta" data-price="19.99">Add to Cart</button>
+   <button type="button" onclick="addToCart('Rhitta', '$19.99')">
+    Add to Cart
+   </button>
 </div>
 
 <div class="blank">
@@ -107,10 +113,7 @@
 <div class="cartTab">
   <h1>Shopping Cart</h1>
 
-<div class="Listcart">
-
-
-</div>
+<div id="listcart"></div>
 
 <div class="name-money">
   <form onsubmit="return false;">
@@ -130,7 +133,7 @@
 
 </div>
 
-<script src="script.js" defer></script>
+<script src="script.js"></script>
 
 </body>
 </html>
