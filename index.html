@@ -58,18 +58,18 @@
 
 <div class="listproduct">
    <img class= "productimage" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center" width="284" height="284">
-      <div class="name">Rhitta</div>
-   <div class="price">$19.99</div>
-  <button type="button" onclick="addToCart()">
+      <div class="name">sword</div>
+   <div class="price">$5.00</div>
+  <button type="button" onclick="addToCart('sword','$5.00')">
     Add to Cart
    </button>
 </div>
 
 <div class="listproduct">
    <img class= "productimage"  src="Img/Rhitta.webp" alt="Blade&Beyond" class="center" width="284" height="284">
-   <div class="name">Rhitta</div>
-   <div class="price">$19.99</div>
-   <button type="button" onclick="addToCart('Rhitta', '$19.99')">
+   <div class="name">potato sword</div>
+   <div class="price">$109.99</div>
+   <button type="button" onclick="addToCart('potato sword', '$109.99')">
     Add to Cart
    </button>
 </div>
@@ -128,10 +128,24 @@
 
  <div class="button">
   <button class="close" onclick="closeCart()" type="button">Close</button>
-  <button class="checkout" type="button">Checkout</button>
+  <button class="checkout"  onclick="openCheckOut()" type="button">Checkout</button>
  </div>
 
 </div>
+
+<div class="CheckOutTab">
+  <h1>CheckOut</h1>
+
+<div id="listcart"></div>
+
+ <div class="button">
+  <button class="close" onclick="closeCheckOut()" type="button">Close</button>
+  <button class="done"  onclick="done()" type="button">done</button>
+ </div>
+
+</div>
+
+
 
 <script src="script.js"></script>
 
