@@ -1,18 +1,25 @@
 console.log('hello world');
 const OUTPUT = document.getElementById("listcart");
+const output = document.getElementById("CheckOutList");
 const listitem = []; //array//
+let tree = 0
 
 function addToCart(name, price) {
-
     listitem.push({name: name, price: price}); //push the price and name producet to the array//
     showCart();
 }
 
 function showCart(){
 
+  OUTPUT.innerHTML = ""
+
+   tree = tree + 1
    OUTPUT.innerHTML = ""; //It remove item from the array//
    for (let i = 0; i < listitem.length; i++) {//i start at 0 until equan to the number of product, and i plus one every time//
-   OUTPUT.innerHTML += "<p>" + listitem[i].name + " - " + listitem[i].price + "</p>"; //write out the code//
+   let item = "<p>" + listitem[i].name + " - " + listitem[i].price + " - " + tree + "</p>"; //write out the code//
+
+   OUTPUT.innerHTML = item ;// print out the code to the pages //
+   output.innerHTML = item ;// same //
  } 
 }
 
@@ -24,6 +31,7 @@ const cartTab = document.querySelector(".showcart .cartTab") //find the item you
  if (cartTab) { //if statement//
    cartTab.style.inset =" 0 0px 0 auto "; //change the width position from -600px to 0px//
  } 
+ 
 }
 
 function closeCart() { // close //
@@ -60,6 +68,7 @@ const cartTab = document.querySelector(".showcart .cartTab")
    cartTab.style.inset =" 0 0px 0 auto "; //change the width position from -600px to 0px//
  } 
 }
+
 
 
 
