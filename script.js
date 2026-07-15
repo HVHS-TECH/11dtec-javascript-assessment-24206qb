@@ -1,29 +1,40 @@
-console.log('hello world');
+console.log("Running shopping cart script");
 const OUTPUT = document.getElementById("listcart");
 const output = document.getElementById("CheckOutList");
-const listitem = []; //array//
-let tree = 0
+let listitem = [];//array//
 
-function addToCart(name, price) {
-    listitem.push({name: name, price: price}); //push the price and name producet to the array//
-    showCart();
+function addToCart(name, price) { //push the price and name producet to the array//
+
+  let itemIndex = -1;   // -1 means not found yet//
+
+  for (let i = 0; i < listitem.length; i++) {  // check if the item is there or not//
+
+    if (listitem[i].name === name) {
+      // remember the position//
+      itemIndex = i;
+    }
+  }
+
+  if (itemIndex === -1) {
+    listitem.push({ name: name, price: price, quantity: 1 }); //if itemIndex is still -1 not added in the cart//
+  } else {
+    listitem[itemIndex].quantity = listitem[itemIndex].quantity + 1; // add 1 to the quantity of the item//
+  }
+
+  showCart();
 }
 
-function showCart(){
+function showCart() {
 
-  OUTPUT.innerHTML = ""
+  let cartHTML = "";// start with an empty string//
 
-   tree = tree + 1
-   OUTPUT.innerHTML = ""; //It remove item from the array//
-   for (let i = 0; i < listitem.length; i++) {//i start at 0 until equan to the number of product, and i plus one every time//
-   let item = "<p>" + listitem[i].name + " - " + listitem[i].price + " - " + tree + "</p>"; //write out the code//
+  for (let i = 0; i < listitem.length; i++) { //i start at 0 until equan to the number of product, and i plus one every time//
+    cartHTML += "<p>" + listitem[i].name + " - " + listitem[i].price + " - " + listitem[i].quantity + "</p>"; //write out the code//
+  }
 
-   OUTPUT.innerHTML = item ;// print out the code to the pages //
-   output.innerHTML = item ;// same //
- } 
+  OUTPUT.innerHTML = cartHTML;// print out the code to the pages //
+  output.innerHTML = cartHTML;// same //
 }
-
-
 
 function openCart() { // open //
 const cartTab = document.querySelector(".showcart .cartTab") //find the item you want to change//
