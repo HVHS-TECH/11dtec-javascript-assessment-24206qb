@@ -115,16 +115,7 @@
 
 <div id="listcart"></div>
 
-<div class="name-money">
-  <form onsubmit="return false;">
-
-    <label for="nameField">Your Name:</label>
-    <input type="text" id="nameField" placeholder="Enter name"><br>
-    
-    <label for="moneyField">Pocket money:</label>
-    <input type="text" id="moneyField" placeholder="Enter money"><br>
-  </form>
-</div>
+<div id="cartTotal">Total: $0.00</div>
 
  <div class="button">
   <button class="close" onclick="closeCart()" type="button">Close</button>
@@ -138,10 +129,22 @@
 
 <div id="CheckOutList"></div>
 
+<div class="name-money">
+  <form onsubmit="return false;">
+
+    <label for="nameField">Your Name:</label>
+    <input type="text" id="nameField" placeholder="Enter name"><br>
+    
+    <label for="moneyField">Pocket money:</label>
+    <input type="text" id="moneyField" placeholder="Enter money"><br>
+  </form>
+</div>
+
  <div class="button">
   <button class="close" onclick="closeCheckOut()" type="button">Close</button>
   <button class="done"  onclick="done()" type="button">done</button>
  </div>
+
 
 </div>
 
@@ -151,5 +154,3 @@
 
 </body>
 </html>
-
-

@@ -97,8 +97,18 @@ body.showcart .cartTab{
   position: fixed;
   inset: 0 0 0 auto;
   display: grid;
-  grid-template-rows: 70px 1fr 80px 70px;
+  grid-template-rows: 70px 1fr 80px 90px ;
   transition: .5s;
+}
+
+#listcart p {
+  margin: 5px 0;
+}
+
+.cartTab h1 {
+  margin: 0;
+  font-size: 50px;
+  line-height: 70px;
 }
 
 .cartTab .button {
@@ -128,7 +138,7 @@ body.showcart .CheckOutTab{
   position: fixed;
   inset: 0 0 0 auto;
   display: grid;
-  grid-template-rows: 70px 1fr 80px 70px;
+  grid-template-rows: 70px 1fr 80px 90px;
   transition: .5s;
 }
 

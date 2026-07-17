@@ -1,6 +1,7 @@
-console.log("Running shopping cart script");
+console.log("Blade & Beyond Shop");
 const OUTPUT = document.getElementById("listcart");
 const output = document.getElementById("CheckOutList");
+const cartTotal = document.getElementById("cartTotal");//element to show the total//
 let listitem = [];//array//
 
 function addToCart(name, price) { //push the price and name producet to the array//
@@ -27,13 +28,17 @@ function addToCart(name, price) { //push the price and name producet to the arra
 function showCart() {
 
   let cartHTML = "";// start with an empty string//
+  let total = 0;// this will add up the total price//
 
   for (let i = 0; i < listitem.length; i++) { //i start at 0 until equan to the number of product, and i plus one every time//
-    cartHTML += "<p>" + listitem[i].name + " - " + listitem[i].price + " - " + listitem[i].quantity + "</p>"; //write out the code//
+    cartHTML += "<p>" + listitem[i].name + " - $" + listitem[i].price + " - " + listitem[i].quantity + "</p>"; //write out the code//
+
+    total = total + (listitem[i].price * listitem[i].quantity);//add this item's total to the overall total//
   }
 
   OUTPUT.innerHTML = cartHTML;// print out the code to the pages //
   output.innerHTML = cartHTML;// same //
+  cartTotal.innerHTML = "Total: $" + total.toFixed(2);// show the total, toFixed(2) keeps it to 2 decimal places//
 }
 
 function openCart() { // open //
@@ -79,7 +84,3 @@ const cartTab = document.querySelector(".showcart .cartTab")
    cartTab.style.inset =" 0 0px 0 auto "; //change the width position from -600px to 0px//
  } 
 }
-
-
-
-
