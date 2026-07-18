@@ -51,7 +51,7 @@
    <img class= "productimage" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center">
    <div class="name">Rhitta</div>
    <div class="price">$19.99</div>
-   <button type="button" onclick="addToCart('Rhitta', '$19.99')">
+   <button type="button" onclick="addToCart('Rhitta', '19.99')">
     Add to Cart
    </button>
 </div>
@@ -60,7 +60,7 @@
    <img class= "productimage" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center" width="284" height="284">
       <div class="name">sword</div>
    <div class="price">$5.00</div>
-  <button type="button" onclick="addToCart('sword','$5.00')">
+  <button type="button" onclick="addToCart('sword','5.00')">
     Add to Cart
    </button>
 </div>
@@ -69,7 +69,7 @@
    <img class= "productimage"  src="Img/Rhitta.webp" alt="Blade&Beyond" class="center" width="284" height="284">
    <div class="name">potato sword</div>
    <div class="price">$109.99</div>
-   <button type="button" onclick="addToCart('potato sword', '$109.99')">
+   <button type="button" onclick="addToCart('potato sword', '109.99')">
     Add to Cart
    </button>
 </div>
@@ -127,28 +127,44 @@
 <div class="CheckOutTab">
   <h1>CheckOut</h1>
 
-<div id="CheckOutList"></div>
+  <div id="CheckOutList"></div>
 
-<div class="name-money">
-  <form onsubmit="return false;">
+  <div id="cartTotalCheckOut">Total: $0.00</div>
 
-    <label for="nameField">Your Name:</label>
-    <input type="text" id="nameField" placeholder="Enter name"><br>
-    
-    <label for="moneyField">Pocket money:</label>
-    <input type="text" id="moneyField" placeholder="Enter money"><br>
-  </form>
+  <div class="name-money">
+    <form onsubmit="return false;">
+
+      <label for="nameField">Your Name:</label>
+      <input type="text" id="nameField" placeholder="Enter name"><br>
+      
+      <label for="moneyField">Pocket money:</label>
+      <input type="text" id="moneyField" placeholder="Enter money"><br>
+    </form>
+  </div>
+
+  <div id="checkoutWarning"></div>
+
+  <div class="button">
+    <button class="close" onclick="closeCheckOut()" type="button">Close</button>
+    <button class="done" onclick="done()" type="button">done</button>
+  </div>
+
 </div>
 
- <div class="button">
-  <button class="close" onclick="closeCheckOut()" type="button">Close</button>
-  <button class="done"  onclick="done()" type="button">done</button>
- </div>
+<div class="ReceiptTab">
+  <h1>Receipt</h1>
 
+  <div id="ReceiptList"></div>
+
+  <div id="PocketMoneyTotal">Pocket money: $0.00</div>
+  <div id="ChangeTotal">Change: $0.00</div>
+  <div id="receiptTotal">Total: $0.00</div>
+
+  <div class="button">
+    <button class="close" onclick="closeReceipt()" type="button">Close</button>
+  </div>
 
 </div>
-
-
 
 <script src="script.js"></script>
 
