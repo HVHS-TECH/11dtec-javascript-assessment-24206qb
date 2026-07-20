@@ -28,8 +28,8 @@
 
 </div>
 
-<div class="blank">
- <img class = "Wishlish" onclick ="openCart()" src="Img/cart.png" alt="Blade&Beyond" width="50" height="50">
+<div class="Wishlish">
+ <img onclick ="openCart()" src="Img/cart.png" alt="Blade&Beyond" width="50" height="50">
 </div>
 
 
@@ -135,20 +135,22 @@
     <form onsubmit="return false;">
 
       <label for="nameField">Your Name:</label>
-      <input type="text" id="nameField" placeholder="Enter name"><br>
-      
-      <label for="moneyField">Pocket money:</label>
-      <input type="text" id="moneyField" placeholder="Enter money"><br>
-    </form>
-  </div>
+      <input type="text" id="nameField" placeholder="Enter name"required><br>
 
-  <div id="checkoutWarning"></div>
+  <div id="nameWarning"><br></div>
+
+      <label for="moneyField">Pocket money:</label>
+      <input type="text" id="moneyField" placeholder="Enter money"required><br>
+
+  <div id="checkoutWarning"><br></div>
 
   <div class="button">
     <button class="close" onclick="closeCheckOut()" type="button">Close</button>
-    <button class="done" onclick="done()" type="button">done</button>
-  </div>
+    <input class="done" onclick="OpenReceipt()" type="submit" value="Submit"required>
 
+    </form>
+   </div>
+  </div>
 </div>
 
 <div class="ReceiptTab">
