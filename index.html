@@ -132,15 +132,16 @@
   <div id="cartTotalCheckOut">Total: $0.00</div>
 
   <div class="name-money">
+    <div>
     <form onsubmit="return false;">
 
       <label for="nameField">Your Name:</label>
       <input type="text" id="nameField" placeholder="Enter name"required><br>
-
+       </div>
   <div id="nameWarning"><br></div>
-
+      <div>
       <label for="moneyField">Pocket money:</label>
-      <input type="text" id="moneyField" placeholder="Enter money"required><br>
+      <input type="text" id="moneyField" placeholder="Enter money"required><br> </div>
 
   <div id="checkoutWarning"><br></div>
 
@@ -154,13 +155,16 @@
 </div>
 
 <div class="ReceiptTab">
-  <h1>Receipt</h1>
+  <div><h1>Receipt</h1></div>
+
+  <div id="NameTotal">Name: </div>
+  <div id="PocketMoneyTotal">Pocket money: $0.00</div>
 
   <div id="ReceiptList"></div>
 
-  <div id="PocketMoneyTotal">Pocket money: $0.00</div>
-  <div id="ChangeTotal">Change: $0.00</div>
   <div id="receiptTotal">Total: $0.00</div>
+
+  <div id="ChangeTotal">Change: $0.00</div>
 
   <div class="button">
     <button class="close" onclick="closeReceipt()" type="button">Close</button>

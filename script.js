@@ -43,7 +43,6 @@ function showCart() {
 }
 
 function OpenReceipt() { // runs when the OpenReceipt button is clicked //
-
   const nameField = document.getElementById("nameField");//get the name input//
   const moneyField = document.getElementById("moneyField");//get the pocket money input//
   const checkoutWarning = document.getElementById("checkoutWarning");//element for the warning message//
@@ -52,6 +51,10 @@ function OpenReceipt() { // runs when the OpenReceipt button is clicked //
   const receiptTotal = document.getElementById("receiptTotal");//element to put the receipt total in//
   const pocketMoneyTotal = document.getElementById("PocketMoneyTotal");//element to show pocket money//
   const changeTotal = document.getElementById("ChangeTotal");//element to show the change//
+  const nameTotal = document.getElementById("NameTotal");
+
+nameWarning.innerHTML = "";
+checkoutWarning.innerHTML = ""; // if we get here, there was enough money, so clear any old warning//
 
   let total = 0;// this will add up the total price//
 
@@ -61,6 +64,11 @@ function OpenReceipt() { // runs when the OpenReceipt button is clicked //
   let namevalue = nameField.value; // name //
   let money = Number(moneyField.value);// turn the pocket money input into a number//
 
+    if ("" >= namevalue ) {  // check if there is a input in the name//
+    nameWarning.innerHTML = "Sorry, you have to have a input!";
+    return; // stop the function here, do not open the receipt//
+  }
+
   if (0 >= money ) { // check if there is a input in the pocket money//
     checkoutWarning.innerHTML = "Sorry, you don't have any money!";
     return; // stop the function here, do not open the receipt//
@@ -69,25 +77,18 @@ function OpenReceipt() { // runs when the OpenReceipt button is clicked //
     return; // stop the function here, do not open the receipt//
   }
 
-  if ("" >= namevalue ) {  // check if there is a input in the name//
-    nameWarning.innerHTML = "Sorry, you have to have a input!";
-    return; // stop the function here, do not open the receipt//
-  }
-
-  
-  checkoutWarning.innerHTML = ""; // if we get here, there was enough money, so clear any old warning//
-
   let change = money - total;// work out how much change is left over//
 
-  let receiptHTML = "<p>Name: " + namevalue + "</p>";// start the receipt with the name//
+  let receiptHTML = ""// start the receipt with the name//
 
   for (let i = 0; i < listitem.length; i++) { //go through every item bought//
     receiptHTML += "<p>" + listitem[i].name + " - $" + listitem[i].price + " - " + listitem[i].quantity + "</p>"; //write out the code//
   }
 
   receiptList.innerHTML = receiptHTML;// print the receipt items//
-  receiptTotal.innerHTML = "Total: $" + total.toFixed(2);// print the receipt total in two dp//
+  nameTotal.innerHTML = "<p>Name: " + namevalue + "</p>";
   pocketMoneyTotal.innerHTML = "Pocket money: $" + money.toFixed(2);// print the pocket money used in two dp//
+  receiptTotal.innerHTML = "Total: $" + total.toFixed(2);// print the receipt total in two dp//
   changeTotal.innerHTML = "Change: $" + change.toFixed(2);// print the change in two dp//
 
   openReceipt();// open the new receipt tab//

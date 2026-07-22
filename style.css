@@ -132,22 +132,28 @@ body.showcart .CheckOutTab{
    inset: 0 -600px 0 auto;
 }
 
+.name-money{  
+  display: grid;
+  grid-template-rows: 35px 35px 35px 35px 90px ;
+}
+
 .CheckOutTab {
   width: 600px;
   background-color: rgba(233, 165, 165, 0.911);
   position: fixed;
   inset: 0 0 0 auto;
   display: grid;
-  grid-template-rows: 70px 1fr 45px 225px;
+  grid-template-rows: 70px 1fr 45px 230px;
   transition: .5s;
 }
 
 .CheckOutTab .button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  height: 90px;
 }
 
-.CheckOutTab .button button {
+.CheckOutTab .button .done {
   background-color: rgba(217, 255, 0, 0.493);
   color: black;
   cursor: pointer;
@@ -160,8 +166,14 @@ body.showcart .CheckOutTab{
   border-color: #fdfffd;
 }
 
+
 body.showcart .ReceiptTab{
    inset: 0 -600px 0 auto;
+}
+.ReceiptTab h1 {
+  margin: 0;
+  font-size: 50px;
+  line-height: 70px;
 }
 
 .ReceiptTab {
@@ -170,7 +182,7 @@ body.showcart .ReceiptTab{
   position: fixed;
   inset: 0 0 0 auto;
   display: grid;
-  grid-template-rows: 70px 1fr 80px 70px 70px 70px;
+  grid-template-rows: 80px 70px 30px 1fr 50px 50px 90px;
   transition: .5s;
 }
 
