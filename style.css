@@ -182,7 +182,7 @@ body.showcart .ReceiptTab{
   position: fixed;
   inset: 0 0 0 auto;
   display: grid;
-  grid-template-rows: 80px 70px 30px 1fr 50px 50px 90px;
+  grid-template-rows: 40px 70px 10px 1fr 50px 50px 90px;
   transition: .5s;
 }
 

@@ -40,6 +40,14 @@ function showCart() {
   output.innerHTML = cartHTML;// same //
   cartTotal.innerHTML = "Total: $" + total.toFixed(2);// show the total in the cart//
   cartTotalCheckOut.innerHTML = "Total: $" + total.toFixed(2);// show the total in checkout too//
+
+}
+
+function openCheckOut() {
+    if (i === "") {
+  cartHTML += "Sorry, you have to have a input!";
+  return; // stop the function here, do not open the receipt//
+  }
 }
 
 function OpenReceipt() { // runs when the OpenReceipt button is clicked //
@@ -69,11 +77,17 @@ checkoutWarning.innerHTML = ""; // if we get here, there was enough money, so cl
     return; // stop the function here, do not open the receipt//
   }
 
-  if (0 >= money ) { // check if there is a input in the pocket money//
+  if (-0 > money) {
+    checkoutWarning.innerHTML = "Sorry, invalid input??";
+    return; // stop the function here, do not open the receipt//
+  } else if (0 >= money ) { // check if there is a input in the pocket money//
     checkoutWarning.innerHTML = "Sorry, you don't have any money!";
     return; // stop the function here, do not open the receipt//
   } else if (money < total) { // check if there is enough money before doing anything else//
     checkoutWarning.innerHTML = "Sorry, you don't have enough pocket money!";
+    return; // stop the function here, do not open the receipt//
+  } else if (money > 1000000000) {
+    checkoutWarning.innerHTML = "Sorry, you have to much pocket money!";
     return; // stop the function here, do not open the receipt//
   }
 
