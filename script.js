@@ -133,6 +133,11 @@ function openCheckOut() { // open //
 const CheckOutTab = document.querySelector(".showcart .CheckOutTab") //find the item you want to change//
 const cartTab = document.querySelector(".showcart .cartTab") //find the item you want to change//
 
+  if (listitem.length === 0) { // check if the cart array is empty//
+    cartTotal.innerHTML = "Sorry, you have no items in your cart!";
+    return; // stop the function here, do not open the checkout tab//
+  }
+
  if (CheckOutTab) { //if statement//
    CheckOutTab.style.inset =" 0 0px 0 auto "; //change the width position from -600px to 0px//
  } 
@@ -174,4 +179,7 @@ const ReceiptTab = document.querySelector(".showcart .ReceiptTab")
  if (ReceiptTab) {
    ReceiptTab.style.inset =" 0 -600px 0 auto "; // revese the change//
  }
+
+  listitem = [];// empty the array, clearing the cart//
+  showCart();// update the page so the cart shows nothing//
 }
