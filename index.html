@@ -50,17 +50,17 @@
 <div class="listproduct">
    <img class= "productimage" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center">
    <div class="name">Rhitta</div>
-   <div class="price">$19.99</div>
+   <div class="price">$1999.99</div>
    <button type="button" onclick="addToCart('Rhitta', '19.99')">
     Add to Cart
    </button>
 </div>
 
 <div class="listproduct">
-   <img class= "productimage" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center" width="284" height="284">
-      <div class="name">sword</div>
-   <div class="price">$5.00</div>
-  <button type="button" onclick="addToCart('sword','5.00')">
+   <img class= "productimage" src="Img/hyper.png" alt="Blade&Beyond" class="center" width="284" height="284">
+      <div class="name">hyperion</div>
+   <div class="price">$4999.99</div>
+  <button type="button" onclick="addToCart('hyperion','4999.99')">
     Add to Cart
    </button>
 </div>
@@ -75,10 +75,10 @@
 </div>
 
 <div class="listproduct">
-   <img class= "productimage" src="Img/Rhitta.webp" alt="Blade&Beyond" class="center">
-   <div class="name">Rhitta</div>
-   <div class="price">$19.99</div>
-   <button type="button" onclick="addToCart('Rhitta', '19.99')">
+   <img class= "productimage" src="Img/kusarigama.png" alt="Blade&Beyond" class="center">
+   <div class="name">kusarigama</div>
+   <div class="price">$1500.99</div>
+   <button type="button" onclick="addToCart('kusarigama', '1500.99')">
     Add to Cart
    </button>
 </div>
@@ -209,11 +209,17 @@
    </button>
 </div>
 <div class="cartTab">
+<div class="resetbutton">
   <h1>Shopping Cart</h1>
-
+<div class="reset" onclick="resetCart()"> 
+  <img src="Img/cart.png" alt="Blade&Beyond" width="50" height="50">
+</div>
+</div>
 <div id="listcart"></div>
 
+<div>
 <div id="cartTotal">Total: $0.00</div>
+</div>
 
  <div class="button">
   <button class="close" onclick="closeCart()" type="button">Close</button>
