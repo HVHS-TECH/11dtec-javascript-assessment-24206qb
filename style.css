@@ -1,6 +1,7 @@
 body {
-  background-color: #fdfffd; 
+  background-color: #fdfffd;
   margin: 0px;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .logo {
@@ -8,12 +9,11 @@ body {
   grid-column: span 2;
 }
 
-
 .container {
   display: grid;
   min-height: 100vh;
-  grid-template-rows: 300px 60px 45vh 45vh 45vh;
-  grid-template-columns: 16.54vw 16.54vw 16.54vw 16.54vw 16.54vw 16.54vw;
+  grid-template-rows: 300px 60px repeat(auto-fit, minmax(0, auto));
+  grid-template-columns: repeat(6, 16.54vw);
   transition: transform .5s;
 }
 
@@ -33,11 +33,10 @@ svg {
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  
 }
 
 .nav ul {
-  list-style-type: none; 
+  list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
@@ -69,26 +68,73 @@ svg {
 .listproduct {
   background-color: rgb(196, 158, 158);
   border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
   margin: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listproduct:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
 }
 
 .productimage {
-  width: 14.75vw;
-  height: 29vh;
-  object-fit: cover; 
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   object-position: center;
+  display: block;
+  background-color: #fff;
+}
+
+.listproduct .name {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  color: #2b2b2b;
+}
+
+.listproduct .price {
+  font-size: 18px;
+  color: #3a3a3a;
+  margin-bottom: 14px;
+}
+
+.listproduct button {
+  margin: 0 auto 18px auto;
+  padding: 8px 22px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #8a6d1a;
+  background-color: #f5e6b0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.listproduct button:hover {
+  background-color: #e9d284;
 }
 
 .Wishlish {
   margin: 45px;
 }
+
+.Wishlish img {
+  cursor: pointer;
+}
+
 .blank {
   background-color: rgb(255, 255, 255);
   margin: 15px;
 }
 
-body.showcart .cartTab{
-   inset: 0 -600px 0 auto;
+body.showcart .cartTab {
+  inset: 0 -600px 0 auto;
 }
 
 .cartTab {
@@ -97,12 +143,20 @@ body.showcart .cartTab{
   position: fixed;
   inset: 0 0 0 auto;
   display: grid;
-  grid-template-rows: 70px 1fr 50px 90px ;
+  grid-template-rows: 70px 1fr 50px 90px;
   transition: .5s;
+  z-index: 10;
 }
 
-.listcart p {
+.listcart p,
+#listcart p {
   margin: 5px 0;
+}
+
+.cartTab .resetbutton {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
 }
 
 .cartTab h1 {
@@ -121,21 +175,28 @@ body.showcart .cartTab{
   background-color: rgba(217, 255, 0, 0.493);
   color: black;
   cursor: pointer;
-    border-color: rgba(217, 255, 0, 0.61);
+  border-color: rgba(217, 255, 0, 0.61);
 }
 
-.cartTab .button .close { 
+.cartTab .button .close {
   background-color: rgba(255, 255, 255, 0.5);
   border-color: #fdfffd;
 }
 
-body.showcart .CheckOutTab{
-   inset: 0 -600px 0 auto;
+.cartTab .button .reset {
+  background-color: rgba(255, 100, 100, 0.6);
+  color: black;
+  cursor: pointer;
+  border-color: rgba(255, 100, 100, 0.8);
 }
 
-.name-money{  
+body.showcart .CheckOutTab {
+  inset: 0 -600px 0 auto;
+}
+
+.name-money {
   display: grid;
-  grid-template-rows: 35px 35px 35px 35px 90px ;
+  grid-template-rows: 35px 35px 35px 35px 90px;
 }
 
 .CheckOutTab {
@@ -146,6 +207,7 @@ body.showcart .CheckOutTab{
   display: grid;
   grid-template-rows: 70px 1fr 45px 230px;
   transition: .5s;
+  z-index: 10;
 }
 
 .CheckOutTab .button {
@@ -158,19 +220,24 @@ body.showcart .CheckOutTab{
   background-color: rgba(217, 255, 0, 0.493);
   color: black;
   cursor: pointer;
-    border-color: rgba(217, 255, 0, 0.61);
+  border-color: rgba(217, 255, 0, 0.61);
 }
 
-
-.CheckOutTab .button .close { 
+.CheckOutTab .button .close {
   background-color: rgba(255, 255, 255, 0.5);
   border-color: #fdfffd;
 }
 
-
-body.showcart .ReceiptTab{
-   inset: 0 -600px 0 auto;
+#checkoutWarning,
+#nameWarning {
+  color: red;
+  font-size: 20px;
 }
+
+body.showcart .ReceiptTab {
+  inset: 0 -600px 0 auto;
+}
+
 .ReceiptTab h1 {
   margin: 0;
   font-size: 50px;
@@ -185,6 +252,7 @@ body.showcart .ReceiptTab{
   display: grid;
   grid-template-rows: 40px 70px 10px 1fr 50px 50px 90px;
   transition: .5s;
+  z-index: 10;
 }
 
 .ReceiptTab .button {
@@ -202,21 +270,4 @@ body.showcart .ReceiptTab{
 .ReceiptTab .button .close {
   background-color: rgba(255, 255, 255, 0.5);
   border-color: #fdfffd;
-}
-
-.checkoutWarning {
-  color: red;
-  font-size: 20px;
-}
-
-.cartTab .button .reset {
-  background-color: rgba(255, 100, 100, 0.6);
-  color: black;
-  cursor: pointer;
-  border-color: rgba(255, 100, 100, 0.8);
-}
-
-.cartTab .resetbutton {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
 }

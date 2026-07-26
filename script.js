@@ -3,8 +3,6 @@ const OUTPUT = document.getElementById("listcart");
 const output = document.getElementById("CheckOutList");
 const cartTotal = document.getElementById("cartTotal");//element to show the total in the cart//
 const cartTotalCheckOut = document.getElementById("cartTotalCheckOut");//element to show the total in checkout//
-const CheckOutTab = document.querySelector(".showcart .CheckOutTab") //find the item you want to change//
-const cartTab = document.querySelector(".showcart .cartTab") //find the item you want to change//
 
 let listitem = [];//array//
 
@@ -23,8 +21,8 @@ function addToCart(name, price) { //push the price and name producet to the arra
     listitem.push({ name: name, price: price, quantity: 1 }); //if itemIndex is still -1 not added in the cart//
   } else {
 
-    if (listitem[itemIndex].quantity >= 25) { // check if we are already at the max amount//
-          cartTotal.innerHTML = "Sorry, the maximum per item is 25!";
+    if (listitem[itemIndex].quantity >= 15) { // check if we are already at the max amount//
+      cartTotal.innerHTML = "Sorry, the maximum per item is 15!";
       return; // stop the function here, do not add any more//
     }
 
@@ -49,17 +47,11 @@ function showCart() {
   output.innerHTML = cartHTML;// same //
   cartTotal.innerHTML = "Total: $" + total.toFixed(2);// show the total in the cart//
   cartTotalCheckOut.innerHTML = "Total: $" + total.toFixed(2);// show the total in checkout too//
-
-}
-
-function openCheckOut() {
-    if (i === "") {
-  cartHTML += "Sorry, you have to have a input!";
-  return; // stop the function here, do not open the receipt//
-  }
 }
 
 function OpenReceipt() { // runs when the OpenReceipt button is clicked //
+  const nameField = document.getElementById("nameField");//get the name input//
+  const moneyField = document.getElementById("moneyField");//get the pocket money input//
   const checkoutWarning = document.getElementById("checkoutWarning");//element for the warning message//
   const nameWarning = document.getElementById("nameWarning");//element for the warning message//
   const receiptList = document.getElementById("ReceiptList");//element to put the receipt items in//
@@ -68,8 +60,8 @@ function OpenReceipt() { // runs when the OpenReceipt button is clicked //
   const changeTotal = document.getElementById("ChangeTotal");//element to show the change//
   const nameTotal = document.getElementById("NameTotal");
 
-nameWarning.innerHTML = "";
-checkoutWarning.innerHTML = ""; // if we get here, there was enough money, so clear any old warning//
+  nameWarning.innerHTML = "";
+  checkoutWarning.innerHTML = ""; // if we get here, there was enough money, so clear any old warning//
 
   let total = 0;// this will add up the total price//
 
@@ -79,7 +71,7 @@ checkoutWarning.innerHTML = ""; // if we get here, there was enough money, so cl
   let namevalue = nameField.value; // name //
   let money = Number(moneyField.value);// turn the pocket money input into a number//
 
-    if ("" >= namevalue ) {  // check if there is a input in the name//
+  if ("" >= namevalue ) {  // check if there is a input in the name//
     nameWarning.innerHTML = "Sorry, you have to have a input!";
     return; // stop the function here, do not open the receipt//
   }
@@ -123,73 +115,78 @@ function resetCart() { // runs when the reset button is clicked //
 // it just for the close and open tab//
 
 function openCart() { // open //
-const cartTab = document.querySelector(".showcart .cartTab") //find the item you want to change//
+  const cartTab = document.querySelector(".showcart .cartTab") //find the item you want to change//
 
- if (cartTab) { //if statement//
-   cartTab.style.inset =" 0 0px 0 auto "; //change the width position from -600px to 0px//
- } 
+  if (cartTab) { //if statement//
+    cartTab.style.inset =" 0 0px 0 auto "; //change the width position from -600px to 0px//
+  }
 }
 
 function closeCart() { // close //
-const cartTab = document.querySelector(".showcart .cartTab")
+  const cartTab = document.querySelector(".showcart .cartTab")
 
- if (cartTab) {
-   cartTab.style.inset =" 0 -600px 0 auto "; // revese the change//
- }
-  
+  if (cartTab) {
+    cartTab.style.inset =" 0 -600px 0 auto "; // revese the change//
+  }
 }
 
 function openCheckOut() { // open //
+
+  const CheckOutTab = document.querySelector(".showcart .CheckOutTab") //find the item you want to change//
+  const cartTab = document.querySelector(".showcart .cartTab") //find the item you want to change//
 
   if (listitem.length === 0) { // check if the cart array is empty//
     cartTotal.innerHTML = "Sorry, you have no items in your cart!";
     return; // stop the function here, do not open the checkout tab//
   }
 
- if (CheckOutTab) { //if statement//
-   CheckOutTab.style.inset =" 0 0px 0 auto "; //change the width position from -600px to 0px//
- } 
+  if (CheckOutTab) { //if statement//
+    CheckOutTab.style.inset =" 0 0px 0 auto "; //change the width position from -600px to 0px//
+  }
 
   if (cartTab) {
-   cartTab.style.inset =" 0 -600px 0 auto "; // revese the change//
- }
+    cartTab.style.inset =" 0 -600px 0 auto "; // revese the change//
+  }
 }
 
-function closeReceipt() { // close //
-const ReceiptTab = document.querySelector(".showcart .ReceiptTab")
-const nameField = document.getElementById("nameField");//get the name input//
-const moneyField = document.getElementById("moneyField");//get the pocket money input//
+function closeCheckOut() { // close //
 
- if (ReceiptTab) {
-   ReceiptTab.style.inset =" 0 -600px 0 auto "; // revese the change//
- }
+  const CheckOutTab = document.querySelector(".showcart .CheckOutTab") //find the item you want to change//
+  const cartTab = document.querySelector(".showcart .cartTab") //find the item you want to change//
 
-  nameField.value = "";// clear the name field//
-  moneyField.value = "";// clear the pocket money field//
+  if (CheckOutTab) {
+    CheckOutTab.style.inset =" 0 -600px 0 auto "; // close the checkout tab//
+  }
 
-  listitem = [];// empty the array, clearing the cart//
-  showCart();// update the page so the cart shows nothing//
+  if (cartTab) { //if statement//
+    cartTab.style.inset =" 0 0px 0 auto "; // reopen the cart tab//
+  }
 }
 
 function openReceipt() { // open //
-const ReceiptTab = document.querySelector(".showcart .ReceiptTab") //find the item you want to change//
-const CheckOutTab = document.querySelector(".showcart .CheckOutTab") //find the item you want to change//
+  const ReceiptTab = document.querySelector(".showcart .ReceiptTab") //find the item you want to change//
+  const CheckOutTab = document.querySelector(".showcart .CheckOutTab") //find the item you want to change//
 
- if (ReceiptTab) { //if statement//
-   ReceiptTab.style.inset =" 0 0px 0 auto "; //change the width position from -600px to 0px//
- } 
+  if (ReceiptTab) { //if statement//
+    ReceiptTab.style.inset =" 0 0px 0 auto "; //change the width position from -600px to 0px//
+  }
 
   if (CheckOutTab) {
-   CheckOutTab.style.inset =" 0 -600px 0 auto "; // revese the change//
- }
+    CheckOutTab.style.inset =" 0 -600px 0 auto "; // revese the change//
+  }
 }
 
 function closeReceipt() { // close //
-const ReceiptTab = document.querySelector(".showcart .ReceiptTab")
+  const ReceiptTab = document.querySelector(".showcart .ReceiptTab")
+  const nameField = document.getElementById("nameField");//get the name input//
+  const moneyField = document.getElementById("moneyField");//get the pocket money input//
 
- if (ReceiptTab) {
-   ReceiptTab.style.inset =" 0 -600px 0 auto "; // revese the change//
- }
+  if (ReceiptTab) {
+    ReceiptTab.style.inset =" 0 -600px 0 auto "; // revese the change//
+  }
+
+  nameField.value = "";// clear the name field//
+  moneyField.value = "";// clear the pocket money field//
 
   listitem = [];// empty the array, clearing the cart//
   showCart();// update the page so the cart shows nothing//
